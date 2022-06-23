@@ -1,0 +1,29 @@
+name: 'Action Config'
+description: 'GitHub Actions for providing configuration values to your workflows.'
+author: 'Hiroyuki Kusu'
+branding:
+  icon: 'settings'
+  color: 'white'
+inputs:
+  config-path:
+    description: ''
+    required: false
+    default: '.github/workflows/.config'
+  repository:
+    description: ''
+    required: false
+    default: ${{ github.repository }}
+  ref:
+    description: ''
+    required: false
+  github-token:
+    description: ''
+    required: false
+    default: ${{ github.token }}
+  mask-variables:
+    description: ''
+    required: false
+    default: 'true'
+runs:
+  using: 'node12'
+  main: 'dist/index.js'

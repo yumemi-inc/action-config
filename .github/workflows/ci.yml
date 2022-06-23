@@ -1,0 +1,26 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  ci:
+    name: Use this action for check
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out
+        uses: actions/checkout@v3
+      - name: Use this action
+        uses: ./
+        id: config
+        with:
+          mask-variables: false
+          ref: ${{ github.sha }}
+      - name: Show outputs
+        run: |
+          echo '${{ steps.config.outputs.key1 }}'
+          echo '${{ steps.config.outputs.key2 }}'
+          echo '${{ steps.config.outputs.key3 }}'
