@@ -1,6 +1,6 @@
 {
   "name": "action-config",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "GitHub Actions for providing configuration values to your workflows.",
   "main": "src/main.js",
   "author": "Hiroyuki Kusu <kusu0806@gmail.com>",
