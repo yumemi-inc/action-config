@@ -17,7 +17,7 @@ jobs:
         uses: ./
         id: config
         with:
-          as-secrets: false
+          enable-secrets: false
           ref: ${{ github.sha }}
       - name: Show outputs
         run: |

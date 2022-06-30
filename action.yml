@@ -20,7 +20,7 @@ inputs:
     description: ''
     required: false
     default: ${{ github.token }}
-  as-secrets:
+  enable-secrets:
     description: ''
     required: false
     default: 'true'
