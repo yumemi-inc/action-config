@@ -1,3 +1,7 @@
+# :warning: DEPRECATED
+
+This action is deprecated. Use [configuration variables](https://docs.github.com/en/actions/learn-github-actions/variables#defining-configuration-variables-for-multiple-workflows) instead.
+
 # Action Config
 
 GitHub Actions for providing configuration values to your workflows.
