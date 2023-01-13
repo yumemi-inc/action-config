@@ -75,7 +75,7 @@ async function run() {
   const config = dotenv.parse(Buffer.from(content, 'base64'));
 
   for (const key in config) {
-    if (input.maskVariables) {
+    if (input.enableSecrets) {
       core.setSecret(config[key]);
     }
     core.setOutput(key, config[key]);
@@ -90,7 +90,7 @@ function getInputs() {
       repository: 'yumemi-inc/action-config',
       ref: '',
       githubToken: GITHUB_TOKEN,
-      maskVariables: true,
+      enableSecrets: true,
     };
   }
 
@@ -100,7 +100,7 @@ function getInputs() {
     repository: core.getInput('repository', { required: true }),
     ref: core.getInput('ref'),
     githubToken: core.getInput('github-token', { required: true }),
-    maskVariables: core.getInput('mask-variables', { required: true }) != 'false',
+    enableSecrets: core.getInput('enable-secrets', { required: true }) != 'false',
   };
 }
 
